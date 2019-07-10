@@ -1,0 +1,16 @@
+<!-- <app-working-nav></app-working-nav>
+<router-outlet></router-outlet> -->
+
+<div>visual studio code </div> 
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
+      <app-working-nav (closeSidenav)="sidenav.close()"></app-working-nav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <!-- <app-header (sidenavToggle)="sidenav.toggle()"></app-header> -->
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
