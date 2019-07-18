@@ -28,12 +28,10 @@ import { AuthGuard } from './services/auth-guard.service';
     HomeComponent,
     PublicNavComponent,
     BrisiComponent
-    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,

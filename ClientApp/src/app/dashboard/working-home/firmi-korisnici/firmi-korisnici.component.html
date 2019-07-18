@@ -1,20 +1,113 @@
+<mat-card class="example-card marginTop">
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Внесување на нова фирма за сметководствени услуги</mat-card-title>
+        <mat-card-subtitle>Општи податоци</mat-card-subtitle>
+    </mat-card-header>
 
-<mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Naslov na card</mat-card-title>
-    <mat-card-subtitle>Podnaslov</mat-card-subtitle>
-  </mat-card-header>
- 
-  <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
+    <mat-card-content>
+        <mat-accordion>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Општи податоци
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Пополнете ги сите задолжителни полиња
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <!-- pocnuva bootstrap -->
+
+                <div class="container justify-content-center">
+                    <div class="row justify-content-center">
+                        <div id="child1" class="col-6 col-sm-3">
+                            <mat-form-field>
+                                <input matInput placeholder="Input">
+                            </mat-form-field>
+                        </div>
+                        <div id="child2" class="col-6 col-sm-3">
+                            <mat-form-field>
+                                <input matInput placeholder="Input2222">
+                            </mat-form-field>
+                        </div>
+                        <div id="child3" class="col-6 col-sm-3">
+                            <mat-form-field>
+                                <input matInput placeholder="Input33333">
+                            </mat-form-field>
+                        </div>
+                        <div id="child4" class="col-6 col-sm-3">col33</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-8">col-8</div>
+                        <div class="col-4">col-4</div>
+                    </div>
+                </div>
+
+
+
+                <!-- zavrsuva bootstrap -->
+                <div class="row">
+                    <div class="col-6">
+                        <mat-form-field>
+                            <input matInput placeholder="Input">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field class="col-3">
+                            <textarea matInput placeholder="Textarea"></textarea>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field class="col-3">
+                            <mat-select placeholder="Select">
+                                <mat-option value="option">Option</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <!-- <mat-grid-list cols="4" rowHeight="100px">
+                    <mat-grid-tile [colspan]="4" [rowspan]="1" [style.background-color]="boja1"> -->
+                <mat-form-field>
+                    <input matInput placeholder="Реден број">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="После реден број">
+                </mat-form-field>
+                <!-- </mat-grid-tile>
+                </mat-grid-list> -->
+
+                <mat-form-field>
+                    <input matInput placeholder="First name55555555555555555">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Age555555">
+                </mat-form-field>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Self aware panel
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+                    <mat-form-field>
+                        <input matInput placeholder="First name55555555555555555">
+                    </mat-form-field>
+                </div>
+                <mat-form-field>
+                    <input class="podravnuvanje" matInput placeholder="Age555555">
+                </mat-form-field>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+    </mat-card-actions>
 </mat-card>

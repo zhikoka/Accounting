@@ -14,6 +14,7 @@ import {
 } from '@angular/router';
 import { AuthGuard } from 'src/app/services/auth-guard.service';
 import { FirmiKorisniciComponent } from '../firmi-korisnici/firmi-korisnici.component';
+import { CompanyComponent } from '../company/company.component';
 
 
 const workinghome: Routes = [
@@ -27,8 +28,8 @@ const workinghome: Routes = [
     canActivateChild: [AuthGuard],
       children: [
       //  { path: '', component: WorkingHomeComponent },
-        { path: 'novafirma', component: FirmiKorisniciComponent },
-        // { path: 'user', component: UserComponent, data: {title: 'Users'} },
+        { path: 'newcompany1', component: FirmiKorisniciComponent },
+        { path: 'newcompany', component: CompanyComponent, data: {title: 'Users'} },
         // { path: 'report', component: ReportComponent, data: {title: 'Report'} },
         // { path: 'reporttable', component: ReportstafftableComponent, data: {title: 'Report'} },
         // { path: 'tablespend', component: TablespendComponent, data: {title: 'PrintReport'} },

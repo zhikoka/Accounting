@@ -212,3 +212,165 @@
     
   
 
+<br>
+
+
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav  
+  [mode]="mode.value"
+  [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+  (backdropClick)="close('backdrop')">
+    <p><button mat-button (click)="sidenav.toggle()">Toggle1</button></p>
+
+
+    <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+    <mat-nav-list>
+      <a mat-list-item >
+        <mat-icon>face</mat-icon>
+        <span class="nav-caption" [routerLink]='["newcompany"]'
+        [routerLinkActive]='["link-active"]'
+        [routerLinkActiveOptions]='{ exact: true }'>Нова фирма</span>
+      </a>
+      <a mat-list-item routerLink="/login" (click)="onClose()">
+        <mat-icon>input</mat-icon>
+        <span class="nav-caption">Login</span>
+      </a>
+      <a mat-list-item routerLink="/training" (click)="onClose()">
+        <mat-icon>fitness_center</mat-icon>
+        <span class="nav-caption">Training</span>
+      </a>
+      <mat-list-item>
+        <button mat-icon-button (click)="onClose()">
+          <mat-icon>eject</mat-icon>
+          <span class="nav-caption">Logout</span>
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+          <button mat-button fxLayoutAlign="center center"[matMenuTriggerFor]="animals">Animal index</button>
+          <mat-menu #animals="matMenu">
+              <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+              <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
+            </mat-menu>
+        </mat-list-item>
+
+
+
+    </mat-nav-list>
+    <p>
+      <mat-radio-group class="example-radio-group" [formControl]="mode">
+        <label>Mode:</label>
+        <mat-radio-button value="over">Over1</mat-radio-button>
+        <mat-radio-button value="side">Side1</mat-radio-button>
+        <mat-radio-button value="push">Push1</mat-radio-button>
+      </mat-radio-group>
+    </p>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
+    <p><button mat-button (click)="onClick()"> togle emmit</button></p>
+    <p>
+      <mat-radio-group class="example-radio-group" [formControl]="mode">
+        <label>Mode:</label>
+        <mat-radio-button value="over">Over</mat-radio-button>
+        <mat-radio-button value="side">Side</mat-radio-button>
+        <mat-radio-button value="push">Push</mat-radio-button>
+      </mat-radio-group>
+    </p>
+<div>-AAAAAAAAAAxccxcxcxcxcxcxcxcxcxcxcxxccxcxcxcxxcAAA-</div>
+<main>
+
+
+   
+    <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+
+    <div fxLayoutAlign ="center center">
+        <button mat-button fxLayoutAlign="center center"[matMenuTriggerFor]="firmi">Фирми</button>
+        <button mat-button fxLayoutAlign="center center"[matMenuTriggerFor]="animals">Animaldsdssddsdsds index</button>
+        <button mat-button fxLayoutAlign="center center"[matMenuTriggerFor]="animals">Animdssdsdsdal index</button>
+        <button mat-button fxLayoutAlign="center center"[matMenuTriggerFor]="animals">Animsdsdsdsddsal index</button>
+        <button mat-button fxLayoutAlign="center center"[matMenuTriggerFor]="animals">Anassasaassasaasimal index</button>
+     
+        <mat-menu #animals="matMenu">
+          <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+          <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
+        </mat-menu>
+        
+        <mat-menu #firmi="matMenu">
+          <button mat-menu-item [matMenuTriggerFor]="fish">Нова фирма</button>
+          <button mat-menu-item [matMenuTriggerFor]="amphibians">Исправка на фирми</button>
+          <button mat-menu-item [matMenuTriggerFor]="reptiles">Reptiles</button>
+          <button mat-menu-item>Birds</button>
+          <button mat-menu-item>Mammals</button>
+        </mat-menu>
+        
+        <mat-menu #invertebrates="matMenu">
+          <button mat-menu-item>Insects</button>
+          <button mat-menu-item>Molluscs</button>
+          <button mat-menu-item>Crustaceans</button>
+          <button mat-menu-item>Corals</button>
+          <button mat-menu-item>Arachnids</button>
+          <button mat-menu-item>Velvet worms</button>
+          <button mat-menu-item>Horseshoe crabs</button>
+        </mat-menu>
+        
+        <mat-menu #fish="matMenu">
+          <button mat-menu-item>Baikal oilfish</button>
+          <button mat-menu-item>Bala shark</button>
+          <button mat-menu-item>Ballan wrasse</button>
+          <button mat-menu-item>Bamboo shark</button>
+          <button mat-menu-item>Banded killifish</button>
+        </mat-menu>
+        
+        <mat-menu #amphibians="matMenu">
+          <button mat-menu-item>Sonoran desert toad</button>
+          <button mat-menu-item>Western toad</button>
+          <button mat-menu-item>Arroyo toad</button>
+          <button mat-menu-item>Yosemite toad</button>
+        </mat-menu>
+        
+        <mat-menu #reptiles="matMenu">
+          <button mat-menu-item>Banded Day Gecko</button>
+          <button mat-menu-item>Banded Gila Monster</button>
+          <button mat-menu-item>Black Tree Monitor</button>
+          <button mat-menu-item>Blue Spiny Lizard</button>
+          <button mat-menu-item disabled>Velociraptor</button>
+        </mat-menu>
+       </div>
+
+
+
+
+
+
+
+
+
+
+
+<router-outlet></router-outlet>
+</main>
+<button type="button" (click)="Navbar();"(click)="sidenav.toggle()">Klikni router za nav</button>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+<!-- <mat-sidenav-container class="example-container" >
+    <mat-sidenav #sidenav1 mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+                 (closed)="events.push('close!')">
+      Sidenav content
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <p><mat-checkbox [(ngModel)]="opened">sidenav1.opened</mat-checkbox></p>
+      <p><button mat-button (click)="sidenav1.toggle()">sidenav1.toggle()</button></p>
+      <p>Events:</p>
+      <div class="example-events">
+        <div *ngFor="let e of events">{{e}}</div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container> -->
+
+

@@ -15,7 +15,11 @@ import {
   MatTableModule,
   MatPaginatorModule,
   MatCardModule,
-  MatMenuModule
+  MatMenuModule,
+  MatRadioModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatSelectModule
 
   
 } from '@angular/material';
@@ -37,7 +41,11 @@ import {
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatRadioModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatSelectModule
   ],
   exports: [
     MatButtonModule,
@@ -54,7 +62,11 @@ import {
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatRadioModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatSelectModule
   ]
 })
 export class MaterialModule { }
