@@ -13,9 +13,9 @@ export class CompanyComponent implements OnInit {
 
   ngOnInit() {
     this.newCompanyForm = this.fb.group({
-      compnyNumber: ['', [Validators.required, Validators.minLength(3)]],
-      
-      companyShortname: ['name', [Validators.required, Validators.minLength(3)]]
+      compnyNumber: [, [Validators.required, Validators.min(3), Validators.max(100)]],
+      companyShortname: ['', [Validators.required, Validators.minLength(3)]],
+      turOperator: [true]
 
     });
   }

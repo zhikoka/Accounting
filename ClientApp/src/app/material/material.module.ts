@@ -23,6 +23,7 @@ import {
 
   
 } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
@@ -45,7 +46,8 @@ import {
     MatRadioModule,
     MatExpansionModule,
     MatGridListModule,
-    MatSelectModule
+    MatSelectModule,
+    FlexLayoutModule
   ],
   exports: [
     MatButtonModule,
@@ -66,7 +68,8 @@ import {
     MatRadioModule,
     MatExpansionModule,
     MatGridListModule,
-    MatSelectModule
+    MatSelectModule,
+    FlexLayoutModule
   ]
 })
 export class MaterialModule { }

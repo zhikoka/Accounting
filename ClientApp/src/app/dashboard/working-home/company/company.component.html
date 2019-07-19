@@ -17,55 +17,43 @@
                         </mat-panel-description>
                     </mat-expansion-panel-header>
                     <!-- prv red-->
-                    <div class="container justify-content-center">
-                        <div class="row justify-content-center">
-                            <div class="col-6 col-sm-3 ">
-                                <mat-form-field class="example-full-width">
-                                    <input matInput name="compnyNumber" placeholder="Company number" formControlName="compnyNumber">
-                                    <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
-                                    <mat-hint align="end">{{newCompanyForm.get('compnyNumber').value.length}} / 256</mat-hint>
-                                    <mat-error *ngIf="newCompanyForm.get('compnyNumber').errors?.minlength">
-                                        Please enter a valid email address
-                                    </mat-error>
-                                    <mat-error *ngIf="newCompanyForm.get('compnyNumber').errors?.required">
-                                        Email is <strong>required</strong>
-                                    </mat-error>
-                                </mat-form-field>
-                            </div>
-                            <div class="col-2 col-sm-3 d-flex justify-content-center">
-                                <mat-form-field>
-                                    <input matInput name="companyShortname" placeholder="Short" formControlName="companyShortname" placeholder="Input2222 d-flex justify-content-center">
-                                </mat-form-field>
-                            </div>
-                            <div class="col-6 col-sm-3 d-flex justify-content-end">
-                                <!-- <mat-form-field>
-                                    <input matInput placeholder="Input33333">
-                                </mat-form-field> -->
-                            </div>
-                            <div class="col-6 col-sm-3 d-flex justify-content-end">col33</div>
+                    <div fxLayout="row wrap" fxLayout.xs="column" class="childQ" fxLayoutAlign="space-around center">
+                        <div>
+                            <mat-form-field>
+                                <input type="number" matInput name="compnyNumber" placeholder="Број на фирма" formControlName="compnyNumber">
+                                <mat-hint align="start"><strong>Задолжително поле</strong> </mat-hint>
+                                <!-- <mat-hint align="end">{{newCompanyForm.get('compnyNumber').value.length}} / 256</mat-hint> -->
+                                <mat-error *ngIf="newCompanyForm.get('compnyNumber').errors?.min">
+                                    Ве молам внесете број поголем од 0
+                                </mat-error>
+                                <mat-error *ngIf="newCompanyForm.get('compnyNumber').errors?.max">
+                                    Ве молам внесете број помал од 100
+                                </mat-error>
+                                <mat-error *ngIf="newCompanyForm.get('compnyNumber').errors?.required">
+                                    Број на фирмата <strong>е задолжителен</strong>
+                                </mat-error>
+                            </mat-form-field>
+
+                        </div>
+                        <div class="childA">
+                            <mat-form-field class="childQ">
+                                <input matInput name="companyShortname" placeholder="Short" formControlName="companyShortname" placeholder="Скратен назив на фирмата">
+                                <mat-error *ngIf="newCompanyForm.get('compnyNumber').errors?.minlength">
+                                    Ве молам внесете број на фирмата
+                                </mat-error>
+                                <mat-error *ngIf="newCompanyForm.get('compnyNumber').errors?.required">
+                                    Ве молам внесете <strong>скратен назив на фирмата</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-checkbox name="turOperator" labelPosition="before" formControlName="turOperator"> <strong>Тур оператор</strong></mat-checkbox>
+
                         </div>
                     </div>
+
                     <!-- vtor red -->
-                    <div class="container justify-content-center">
-                        <div class="row justify-content-center">
-                            <div id="child1" class="col-6 col-sm-3 ">
-                                <!-- <mat-form-field>
-                                    <input matInput placeholder="Input">
-                                </mat-form-field> -->
-                            </div>
-                            <div id="child2" class="col-2 col-sm-3 d-flex justify-content-center">
-                                <!-- <mat-form-field>
-                                    <input matInput placeholder="Input2222 d-flex justify-content-center">
-                                </mat-form-field> -->
-                            </div>
-                            <div id="child3" class="col-6 col-sm-3 d-flex justify-content-end">
-                                <!-- <mat-form-field>
-                                    <input matInput placeholder="Input33333">
-                                </mat-form-field> -->
-                            </div>
-                            <div id="child4" class="col-6 col-sm-3 d-flex justify-content-end">col33</div>
-                        </div>
-                    </div>
+
                     <!-- tret red -->
                 </mat-expansion-panel>
                 <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
@@ -97,6 +85,10 @@
         </mat-card-actions>
     </form>
 </mat-card>
+
+
+
+
 
 <br>Dirty: {{ newCompanyForm.dirty }}
 <br>Touched: {{ newCompanyForm.touched }}
