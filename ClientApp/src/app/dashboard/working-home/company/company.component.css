@@ -9,8 +9,8 @@
 }
 
 mat-panel-title {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 mat-panel-description {
@@ -19,17 +19,31 @@ mat-panel-description {
 }
 
 .example-container {
-    /* display: flex;
-    flex-direction: column; */
     width: 100%;
 }
 
 .childA {
-    flex: 2;
+    flex: 4;
     width: 100%;
 }
 
-.childQ {
-    padding-left: 20px;
+.childWidth100 {
     width: 100%;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.example-container>* {
+    width: 100%;
+}
+
+.paddingLeft15 {
+    padding-left: 15px;
+}
+
+.childWidth101 {
+    width: 50%;
 }

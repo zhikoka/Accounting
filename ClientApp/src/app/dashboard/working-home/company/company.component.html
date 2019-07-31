@@ -17,7 +17,7 @@
                         </mat-panel-description>
                     </mat-expansion-panel-header>
                     <!-- prv red-->
-                    <div fxLayout="row wrap" fxLayout.xs="column" class="childQ" fxLayoutAlign="space-around center">
+                    <div fxLayout="row wrap" fxLayout.xs="column" class="childWidth100" fxLayoutAlign="space-around center">
                         <div>
                             <mat-form-field>
                                 <input type="number" matInput name="compnyNumber" placeholder="Број на фирма" formControlName="compnyNumber">
@@ -27,7 +27,7 @@
                                     Ве молам внесете број поголем од 0
                                 </mat-error>
                                 <mat-error *ngIf="newCompanyForm.get('compnyNumber').errors?.max">
-                                    Ве молам внесете број помал од 100
+                                    Ве молам внесете број помал од 10000
                                 </mat-error>
                                 <mat-error *ngIf="newCompanyForm.get('compnyNumber').errors?.required">
                                     Број на фирмата <strong>е задолжителен</strong>
@@ -35,53 +35,185 @@
                             </mat-form-field>
 
                         </div>
-                        <div class="childA">
-                            <mat-form-field class="childQ">
-                                <input matInput name="companyShortname" placeholder="Short" formControlName="companyShortname" placeholder="Скратен назив на фирмата">
-                                <mat-error *ngIf="newCompanyForm.get('compnyNumber').errors?.minlength">
-                                    Ве молам внесете број на фирмата
-                                </mat-error>
+                        <div class="childA paddingLeft15">
+                            <mat-form-field class="childWidth100">
+                                <input matInput name="companyShortname" formControlName="companyShortname" placeholder="Скратен назив на фирмата">
                                 <mat-error *ngIf="newCompanyForm.get('compnyNumber').errors?.required">
                                     Ве молам внесете <strong>скратен назив на фирмата</strong>
                                 </mat-error>
                             </mat-form-field>
                         </div>
                         <div>
-                            <mat-checkbox name="turOperator" labelPosition="before" formControlName="turOperator"> <strong>Тур оператор</strong></mat-checkbox>
+                            <mat-checkbox name="turOperator" labelPosition="before" formControlName="turOperator">
+                                <strong>Тур оператор</strong></mat-checkbox>
 
                         </div>
                     </div>
-
                     <!-- vtor red -->
+                    <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-around center">
+                        <div class="example-container">
+                            <mat-form-field>
+                                <input type="text" matInput name="compnyName" placeholder="Полн назив на фирма" formControlName="compnyName">
+                                <mat-hint align="start"><strong>Задолжително поле</strong> </mat-hint>
+                                <mat-error *ngIf="newCompanyForm.get('compnyName').errors?.required">
+                                    Називот на фирмата <strong>е задолжителен</strong>
+                                </mat-error>
+                            </mat-form-field>
 
-                    <!-- tret red -->
+                        </div>
+                    </div>
+                    <!-- tret  red -->
+                    <div fxLayout="row wrap" fxLayout.xs="column" class="childWidth100" fxLayoutAlign="space-around space-around">
+                        <div class="childA" xLayoutAlign="space-around center">
+                            <mat-form-field class="childWidth100">
+                                <input matInput name="compnyAdress" placeholder="Адреса на фирма" formControlName="compnyAdress">
+                                <mat-hint [ngStyle]="{color: primary}" align="start"><strong>Задолжително поле</strong>
+                                </mat-hint>
+                                <mat-error *ngIf="newCompanyForm.get('compnyAdress').errors?.required">
+                                    Адреса на фирмата <strong>е задолжителена</strong>
+                                </mat-error>
+                            </mat-form-field>
+
+                        </div>
+                        <div xLayoutAlign="space-around center" class="paddingLeft15">
+                            <mat-form-field>
+                                <input matInput name="compnyAdressNumber" formControlName="compnyAdressNumber" placeholder="Број">
+                                <mat-error *ngIf="newCompanyForm.get('compnyAdressNumber').errors?.minlength">
+                                    Ве молам внесете број на фирмата
+                                </mat-error>
+                                <mat-error *ngIf="newCompanyForm.get('compnyAdressNumber').errors?.required">
+                                    Ве молам внесете <strong>број</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="paddingLeft15">
+                            <mat-form-field>
+                                <input matInput name="compnyACity" formControlName="companyCity" placeholder="Град">
+                                <mat-error *ngIf="newCompanyForm.get('companyCity').errors?.minlength">
+                                    Ве молам внесете <strong>grad</strong>
+                                </mat-error>
+                                <mat-error *ngIf="newCompanyForm.get('companyCity').errors?.required">
+                                    Ве молам внесете <strong>град</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="paddingLeft15">
+                            <mat-form-field>
+                                <input matInput name="compnyACity" formControlName="companyPlace" placeholder="Населено место">
+                                <mat-error *ngIf="newCompanyForm.get('companyPlace').errors?.minlength">
+                                    Ве молам внесете <strong>grad</strong>
+                                </mat-error>
+                                <mat-error *ngIf="newCompanyForm.get('companyPlace').errors?.required">
+                                    Ве молам внесете <strong>град</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+
+
                 </mat-expansion-panel>
-                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <br>
+                <mat-expansion-panel (opened)="panelOpenState=true" (closed)="panelOpenState=false">
                     <mat-expansion-panel-header>
                         <mat-panel-title>
-                            Self aware panel
+                            Податоци за плати и овластени лица
                         </mat-panel-title>
                         <mat-panel-description>
-                            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                            Пополнете ги сите задолжителни полиња
                         </mat-panel-description>
                     </mat-expansion-panel-header>
-                    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-                        <!-- <mat-form-field>
-                            <input matInput placeholder="First name55555555555555555">
-                        </mat-form-field> -->
+
+                    <!-- cetvrt red -->
+                    <div fxLayout="row wrap" fxLayout.xs="column" class="childWidth100" fxLayoutAlign="space-around center">
+                        <div class="childA" xLayoutAlign="space-around center">
+                            <mat-form-field>
+                                <input matInput name="compnyCode" placeholder="Код" formControlName="compnyCode">
+                                <mat-hint align="start"><strong>Задолжително поле</strong> </mat-hint>
+                                <mat-error *ngIf="newCompanyForm.get('compnyCode').errors?.required">
+                                    Кодот <strong>е задолжителена</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <!-- peti  red -->
+                        <div fxLayout="row wrap" fxLayout.xs="column" class="childWidth100" fxLayoutAlign="space-around center">
+                            <div class="childA" xLayoutAlign="space-around center">
+                                <mat-form-field class="childWidth101">
+                                    <input matInput name="compnyCityCode" placeholder="Повикувачки код за град" formControlName="compnyCityCode">
+                                    <mat-hint align="start"><strong>Задолжително поле</strong> </mat-hint>
+                                    <mat-error *ngIf="newCompanyForm.get( 'compnyCityCode').errors?.required ">
+                                        Повикувачкиот код за градот <strong>е задолжителена</strong>
+                                    </mat-error>
+                                </mat-form-field>
+
+                            </div>
+                            <div xLayoutAlign="space-around center " class="paddingLeft15">
+                                <mat-form-field>
+                                    <input matInput name='compnyPhoneNumber' formControlName='compnyPhoneNumber' placeholder="Фиксен телефон ">
+                                </mat-form-field>
+                            </div>
+
+
+                            <div class="paddingLeft15 ">
+                                <mat-form-field>
+                                    <input matInput name='companyEmail' formControlName='companyEmail' placeholder="Емаил">
+                                    <mat-error *ngIf="newCompanyForm.get('companyEmail').errors?.email">
+                                        Ве молам внесете <strong>град</strong>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <!-- шесто  red -->
+                        <div fxLayout="row wrap" fxLayout.xs="column" class="childWidth100" fxLayoutAlign="space-around center">
+                            <div class="childA" xLayoutAlign="space-around center">
+                                <mat-form-field class="childWidth100">
+                                    <input matInput name="ddvObvrznik" placeholder="ДДВ обврзник-МК?" formControlName="ddvObvrznik">
+                                    <mat-hint align="start"><strong>Задолжително поле</strong> </mat-hint>
+                                    <mat-error *ngIf="newCompanyForm.get( 'ddvObvrznik').errors?.required ">
+                                        Повикувачкиот код за градот <strong>е задолжителена</strong>
+                                    </mat-error>
+                                </mat-form-field>
+
+                            </div>
+                            <div xLayoutAlign="space-around center " class="paddingLeft15">
+                                <mat-form-field>
+                                    <input matInput name='compnyWatNumber' formControlName='compnyWatNumber' placeholder="Даночен број ">
+                                    <mat-error *ngIf="newCompanyForm.get( 'compnyAdressNumber').errors?.minlength ">
+                                        Ве молам внесете број на фирмата
+                                    </mat-error>
+                                    <mat-error *ngIf="newCompanyForm.get('compnyWatNumber').errors?.required">
+                                        Ве молам внесете <strong>број</strong>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="paddingLeft15 ">
+                                <mat-form-field>
+                                    <input matInput name='companyUniqueNumber' formControlName='companyUniqueNumber' placeholder="Матичен број">
+                                </mat-form-field>
+                            </div>
+                            <div class="paddingLeft15 ">
+                                <mat-form-field>
+                                    <input matInput name='compnyStatys' formControlName='compnyStatys' placeholder="Посебен статус на друштвото (1), ТИРЗ (2)">
+                                    <mat-error *ngIf="newCompanyForm.get('compnyStatys').errors?.required">
+                                        Ве молам внесете <strong>град</strong>
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
                     </div>
-                    <!-- <mat-form-field>
-                        <input class="podravnuvanje" matInput placeholder="Age555555">
-                    </mat-form-field> -->
+
                 </mat-expansion-panel>
             </mat-accordion>
         </mat-card-content>
         <mat-card-actions>
             <button mat-button>LIKE</button>
             <button mat-button>SHARE</button>
-            <button class="btn btn-primary mr-3" type="submit" style="width:80px">
-          Save
-        </button>
+            <button class="btn btn-primary mr-3 " type="submit " style="width:80px ">
+                Save
+            </button>
         </mat-card-actions>
     </form>
 </mat-card>
@@ -94,5 +226,8 @@
 <br>Touched: {{ newCompanyForm.touched }}
 <br>Valid: {{ newCompanyForm.valid }}
 <br>Value: {{ newCompanyForm.value | json }}
+<br>Value: {{ newCompanyForm.get('compnyNumber')?.value }}
+
 <br>Street: {{ newCompanyForm.get('compnyNumber')?.value }}
 <br>&nbsp;
+<br> value: {{ newCompanyForm.compnyAdress}}
